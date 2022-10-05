@@ -18,8 +18,12 @@ class _WebViewWidget extends StatelessWidget {
       onWebViewCreated: (WebViewController webViewController) {
         controller.complete(webViewController);
       },
+      gestureNavigationEnabled: true,
       onProgress: (int progress) {
         print('WebView is loading (progress : $progress%)');
+      },
+      onPageFinished: (String url) {
+        print('Page finished loading: $url');
       },
     );
   }
