@@ -14,9 +14,30 @@ class _WebViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return WebView(
       javascriptMode: JavascriptMode.unrestricted,
-      initialUrl: url,
-      onWebViewCreated: (WebViewController webViewController) {
-        controller.complete(webViewController);
+      allowsInlineMediaPlayback: true,
+      debuggingEnabled: false,
+      initialMediaPlaybackPolicy: AutoMediaPlaybackPolicy.always_allow,
+      initialUrl: "https://cutiepie.gameontech.co.uk/",
+      onWebViewCreated: (WebViewController webviewcontroller) {
+        try {} catch (error, stackTrace) {
+          print('$error');
+        }
+      },
+      // onWebViewCreated: (WebViewController webViewController) {
+      //   controller.complete(webViewController);
+      // },
+      javascriptChannels: Set.from([
+        JavascriptChannel(
+          name: "flutter",
+          onMessageReceived: (JavascriptMessage message) {
+            if (message.message == "onSubscribeClick") {
+              print("onSubscribeClick");
+            }
+          },
+        )
+      ]),
+      onWebResourceError: (websourceerror) {
+        print("=> onWebResourceError " + websourceerror.domain.toString());
       },
       gestureNavigationEnabled: true,
       onProgress: (int progress) {
