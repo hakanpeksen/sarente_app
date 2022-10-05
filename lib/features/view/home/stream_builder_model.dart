@@ -15,9 +15,7 @@ abstract class StreamBuilderModel extends State<StreamBuilderWidget> {
   void initState() {
     super.initState();
 
-    //  _initFutureForLoop();
-
-    goToWebView();
+    _initFutureForLoop();
   }
 
   @override
@@ -40,8 +38,7 @@ abstract class StreamBuilderModel extends State<StreamBuilderWidget> {
 
   void goToWebView() {
     if (mounted) {
-      // context.navigateToReset('/webView');
-      context.navigateToReset('/webView2');
+      context.navigateToReset('/webView3');
     }
   }
 }

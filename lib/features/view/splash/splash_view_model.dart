@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:kartal/kartal.dart';
-import 'package:sarente_app/features/view/webView/webview2.dart';
 
+import '../home/home_view.dart';
 import 'splash_view.dart';
 
 abstract class SplashViewModel extends State<SplashView> {
@@ -25,8 +25,8 @@ abstract class SplashViewModel extends State<SplashView> {
     _timer = Timer(
       _splashDuration,
       () {
-        context.navigateToPage(const WebView2());
-        //  context.navigateToPage(const HomeView(), type: SlideType.RIGHT);
+        //context.navigateToPage(const WebView3());
+        context.navigateToPage(const HomeView(), type: SlideType.RIGHT);
       },
     );
   }

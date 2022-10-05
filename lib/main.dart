@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'features/view/home/home_view.dart';
 import 'features/view/splash/splash_view.dart';
-import 'features/view/webView/webview2.dart';
+import 'features/view/webView/webview3.dart';
 
 void main() => runApp(const MyApp());
 
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '': (context) => const SplashView(),
         '/home': (context) => const HomeView(),
-        '/webView2': (context) => const WebView2(),
+        '/webView3': (context) => const WebView3(),
       },
     );
   }
